@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}" />
+</head>
+<body>
+	<h1>Welcome to the Homefront! Collect as much gold as possible.</h1>
+	<div id="total">
+		<p>Your Gold:</p>
+		<div id="totalGold">{{ session["gold"] }}</div>
+	</div>
+	<div class="place">
+		<h2>Farm</h2>
+		<p>(earns 10 - 20 golds)</p>
+		<form action="/process_money" method="POST">
+			<input type="hidden" name="building" value="farm" />
+			<input type="submit" value="Find Gold!" />
+		</form>
+	</div>
+	<div class="place">
+		<h2>Cave</h2>
+		<p>(earns 5 - 10 golds)</p>
+		<form action="/process_money" method="POST">
+			<input type="hidden" name="building" value="cave" />
+			<input type="submit" value="Find Gold!" />
+		</form>
+	</div>
+	<div class="place">
+		<h2>House</h2>
+		<p>(earns 2 - 5 golds)</p>
+		<form action="/process_money" method="POST">
+			<input type="hidden" name="building" value="house" />
+			<input type="submit" value="Find Gold!" />
+		</form>
+	</div>
+	<div class="place">
+		<h2>Casino</h2>
+		<p>(earns/takes 0 - 50 golds)</p>
+		<form action="/process_money" method="POST">
+			<input type="hidden" name="building" value="casino" />
+			<input type="submit" value="Find Gold!" />
+		</form>
+	</div>
+	<div id=="activities">
+		<p>Activities:</p>
+		<div id="log">
+			{% for turn in session["log"] %}
+				{% if session["gain"] < 0 %}
+					<p class="red">{{ turn }}</p>
+				{% else %}
+					<p class="green">{{ turn }}</p>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	<form action="/restart">
+		<input type="submit" value="Restart the Game!" id="restart" />
+	</form>
+</body>
+</html>

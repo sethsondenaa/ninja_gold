@@ -1,0 +1,73 @@
+body {
+	width: 970px;
+	background-color: darkgreen;
+	font-family: sans-serif;
+}
+
+h1 {
+	border-radius: 5px;
+	border: solid 5px black;
+	padding: 5px;
+	background-color: grey;
+	text-align: center;
+}
+
+#total {
+	margin-bottom: 10px;
+}
+
+#total p {
+	display: inline;
+	vertical-align: middle;
+}
+
+#totalGold {
+	border: solid 2px black;
+	border-radius: 3px;
+	padding: 5px;
+	background-color: white;
+	display: inline-block;
+	margin-left: 5px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.place {
+	width: 200px;
+	background-color: grey;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	border: solid 5px black;
+	display: inline-block;
+	margin-left: 5px;
+}
+
+#log {
+	width: 850px;
+	border: solid 3px black;
+	height: 200px;
+	border-radius: 5px;
+	margin-left: 25px;
+	background-color: white;
+	overflow: scroll;
+}
+
+#log p {
+	margin: 3px 0px 0px 3px;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+#restart {
+	margin: 10px 0px 0px 400px;
+	border: solid 2px black;
+	background-color: grey;
+	border-radius: 3px;
+}
