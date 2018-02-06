@@ -17,27 +17,27 @@ def process_money():
 		session["gain"] = random.randrange(10, 21)
 		session["time"] = datetime.now()
 		session["gold"] += session["gain"]
-		session["log"].append("Earned " + str(session["gain"]) + " golds from the " + request.form["building"] +"! (" + str(session["time"]) + ")")
+		session["log"].append({"class":"green", "text":"Earned " + str(session["gain"]) + " golds from the " + request.form["building"] +"! (" + str(session["time"]) + ")"})
 	elif request.form["building"] == "cave":
 		session["gain"] = random.randrange(5, 11)
 		session["time"] = datetime.now()
 		session["gold"] += session["gain"]
-		session["log"].append("Earned " + str(session["gain"]) + " golds from the " + request.form["building"] +"! (" + str(session["time"]) + ")")
+		session["log"].append({"class":"green", "text":"Earned " + str(session["gain"]) + " golds from the " + request.form["building"] +"! (" + str(session["time"]) + ")"})
 	elif request.form["building"] == "house":
 		session["gain"] = random.randrange(2, 6)
 		session["time"] = datetime.now()
 		session["gold"] += session["gain"]
-		session["log"].append("Earned " + str(session["gain"]) + " golds from the " + request.form["building"] + "! (" + str(session["time"]) + ")")
+		session["log"].append({"class":"green", "text":"Earned " + str(session["gain"]) + " golds from the " + request.form["building"] +"! (" + str(session["time"]) + ")"})
 	elif request.form["building"] == "casino":
 		session["gain"] = random.randrange(-50, 51)
 		session["time"] = datetime.now()
 		session["gold"] += session["gain"]
 		if session["gain"] < 0:
-			session["log"].append("Entered a casino and lost " + str(session["gain"]* (-1)) + " golds... Ouch.. (" + str(session["time"]) + ")")
+			session["log"].append({"class":"red", "text":"Entered a casino and lost " + str(session["gain"]* (-1)) + " golds... Ouch.. (" + str(session["time"]) + ")"})
 		elif session["gain"] > 0:
-			session["log"].append("Entered a casino and won " + str(session["gain"]) + " golds... Nice! (" + str(session["time"]) + ")")
+			session["log"].append({"class":"green", "text":"Entered a casino and won " + str(session["gain"]) + " golds... Nice! (" + str(session["time"]) + ")"})
 		else:
-			session["log"].append("Entered a casino and came out even. (" + str(session["time"]) + ")")
+			session["log"].append({"class":"green", "text":"Entered a casino and came out even. (" + str(session["time"]) + ")"})
 	return redirect("/")
 
 @app.route("/restart")

@@ -46,11 +46,7 @@
 		<p>Activities:</p>
 		<div id="log">
 			{% for turn in session["log"] %}
-				{% if session["gain"] < 0 %}
-					<p class="red">{{ turn }}</p>
-				{% else %}
-					<p class="green">{{ turn }}</p>
-				{% endif %}
+				<p class={{ turn["class"] }}>{{ turn["text"] }}</p>
 			{% endfor %}
 		</div>
 	</div>
